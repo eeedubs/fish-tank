@@ -27,6 +27,7 @@ class Denizen {
   update(t) {
     // if you're out of bounds, despawn
     if (this.outOfBounds(this.tank.getBounds())) {
+      console.log("out of bounds")
       this.kill();
     } else {
       for (var i = 0; i < this.calcPhysicsTicks(t); i++) {
@@ -62,7 +63,7 @@ class Denizen {
   }
 
   outOfBounds(bounds) {
-    // TODO: it'd be cool if Seeds could go above the top fo the tank, then fall back down
+    // TODO: it'd be cool if Seeds could go above the top of the tank, then fall back down
     return (
       this.position.x + 5 * this.width < bounds.minX ||
       this.position.x - 5 * this.width > bounds.maxX ||
