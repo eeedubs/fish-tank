@@ -2,6 +2,7 @@ class BiteFish extends Fish {
 
   constructor(options) {
     super(options);
+    this.name = 'bitefish';
     this.imageUri = '/images/bitefish.gif';
     this.maxSwimSpeed = 100;
     this.isTasty = false;
@@ -23,13 +24,8 @@ class BiteFish extends Fish {
   }
 
   isClose = (posX, posY,) => {
-    console.log(Object.keys(this.tank.denizens).length)
     return (
       Math.abs(posX - this.position.x) <= 40 && Math.abs(posY - this.position.y) <= 40
     )
-  }
-
-  onClick(event) {
-    console.log(this)
   }
 }

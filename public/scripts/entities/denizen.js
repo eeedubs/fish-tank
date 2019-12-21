@@ -52,8 +52,20 @@ class Denizen {
     };
   }
 
+  determineFishDirection(directionDelta) {
+    if (directionDelta < 0){
+      this.imageUri = `/images/${this.name}_rev.${this.getExtension(this.imageUri)}`;
+    } else {
+      this.imageUri = `/images/${this.name}.${this.getExtension(this.imageUri)}`;
+    }
+  }
+
+  getExtension(imageFile){
+    return imageFile.split('.')[1]
+  }
+
   onClick(event) {
-    throw "not implemented";
+    // throw "not implemented";
   }
 
   kill(duration) {

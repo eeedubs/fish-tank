@@ -2,7 +2,8 @@ class BasicFish extends Fish {
 
   constructor(options) {
     super(options)
-    this.imageUri = '/images/fish01.png';
+    this.name = 'basicfish';
+    this.imageUri = '/images/basicfish.png';
     this.isTasty = true;
   }
 

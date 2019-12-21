@@ -6,6 +6,7 @@ class Fish extends Denizen {
     this.maxSwimSpeed = 100;
     this.makeNewVelocity();
     this.isTasty = true;
+    this.positionLog = [];
   }
 
   generateSwimVelocity(max, min) {
@@ -21,6 +22,7 @@ class Fish extends Denizen {
 
   updateOneTick() {
     var delta = this.swimVelocity.scale(PHYSICS_TICK_SIZE_S);
+    this.determineFishDirection(delta.x)
     this.position.addMut(delta);
     this.timeUntilSpeedChange -= PHYSICS_TICK_SIZE_S;
     if (this.timeUntilSpeedChange < 0) {

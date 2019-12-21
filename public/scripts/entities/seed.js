@@ -31,7 +31,7 @@ class Seed extends Denizen {
       position: this.position,
     });
     if (!individual.isTasty){
-      var audio = new Audio('http://www.wavsource.com/snds_2018-06-03_5106726768923853/movies/misc/jaws_x.wav')
+      var audio = new Audio('../../audio/jaws.wav')
       audio.play();
     }
   }
